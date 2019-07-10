@@ -38,3 +38,9 @@ def XMLCFG_LIPC_ClientInit(uiNetconfFlag,
     return cfunc(uiNetconfFlag, enLipcReqType,
           enOutputType, pcRolelist, usRoleListLen)
 
+def XMLCFG_LIPC_EpollProc(hXmlcfgHandle):
+    cfunc = clib.xmlcfg.XMLCFG_LIPC_EpollProc
+    cfunc.restype = ctypes.c_ulong
+    cfunc.argtypes = (ctypes.c_ulong)
+    return cfunc(hXmlcfgHandle)
+
